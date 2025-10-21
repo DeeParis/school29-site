@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Школа №29 г. Георгиевск</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #fff;
+    color: #333;
+    transition: background-color 0.5s, color 0.5s;
+  }
+  body.dark {
+    background: #121212;
+    color: #ddd;
+  }
+  header {
+    background: #000;
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+  nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  nav a.active,
+  nav a:hover {
+    background-color: #555;
+  }
+  main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  section {
+    display: none;
+  }
+  section.active {
+    display: block;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  footer {
+    background: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+  }
+  /* Кнопка переключения темы */
+  #theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    z-index: 1000;
+  }
+  #theme-toggle:hover {
+    background-color: #444;
+  }
+  /* Галерея */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap: 15px;
+    margin-top: 15px;
+  }
+  .gallery img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
+  /* Модальное окно */
+  #modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  #modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #fff;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Школа №29 города Георгиевск</h1>
+  <nav>
+    <a href="#" class="nav-link active" data-target="home">Главная</a>
+    <a href="#" class="nav-link" data-target="about">О школе</a>
+    <a href="#" class="nav-link" data-target="gallery">Галерея</a>
+    <a href="#" class="nav-link" data-target="teachers">Учителя</a>
+  </nav>
+</header>
+
+<button id="theme-toggle">Тёмная тема</button>
+
+<main>
+  <section id="home" class="active">
+    <h2>Добро пожаловать!</h2>
+    <p>Школа №29 — лучшая школа города Георгиевск, где учатся самые лучшие ученики!</p>
+    <p>Мы рады видеть вас на нашем сайте.</p>
+  </section>
+
+  <section id="about">
+    <h2>О школе</h2>
+    <p>11 января 1996 года открылась школа-новостройка в 347 квартале г. Георгиевска. В 1997 году оборудован компьютерный класс. В 2008 году открыт плавательный бассейн. 13 сентября 2023 года открыт первый в крае центр дополнительного образования детей "Кванториум".</p>
+    <p>Каждый год в нашей школе многое меняется, но неизменным остается одно: школа существует для детей и старается дать детям пространство благополучия, успеха и безопасности.</p>
+    <p>В нашей школе трудится ответственный, сильный и слаженный педагогический коллектив, который прилагает немало усилий к тому, чтобы сплотить вокруг себя всех детей и их родителей.</p>
+    <p>Основная цель нашего коллектива — обеспечить качественное образование, чтобы каждый обучающийся смог полностью реализовать себя. Мы работаем на всестороннее развитие личности и ставим такую задачу, чтобы каждый школьник был готов не только к поступлению в высшие и средние учебные заведения, но и к жизни в современном мире.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Галерея школы</h2>
+    <div class="gallery">
+      <img src="school1.jpg" alt="Школа 1" />
+      <img src="school2.jpg" alt="Школа 2" />
+      <img src="school3.jpg" alt="Школа 3" />
+      <img src="school4.jpg" alt="Школа 4" />
+    </div>
+  </section>
+
+  <section id="teachers">
+    <h2>Учителя</h2>
+    <div class="gallery">
+      <img src="teacher1.jpg" alt="Учитель 1" />
+      <img src="teacher2.jpg" alt="Учитель 2" />
+      <img src="teacher3.jpg" alt="Учитель 3" />
+      <img src="teacher4.jpg" alt="Учитель 4" />
+      <img src="teacher5.jpg" alt="Учитель 5" />
+      <img src="teacher6.jpg" alt="Учитель 6" />
+      <img src="teacher7.jpg" alt="Учитель 7" />
+      <img src="teacher8.jpg" alt="Учитель 8" />
+      <img src="teacher9.jpg" alt="Учитель 9" />
+      <img src="teacher10.jpg" alt="Учитель 10" />
+      <img src="teacher11.jpg" alt="Учитель 11" />
+      <img src="teacher12.jpg" alt="Учитель 12" />
+      <img src="teacher13.jpg" alt="Учитель 13" />
+      <img src="teacher14.jpg" alt="Учитель 14" />
+      <img src="teacher15.jpg" alt="Учитель 15" />
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Валерия Максимовна</p>
+</footer>
+
+<!-- Модальное окно для увеличения фото -->
+<div id="modal">
+  <img id="modal-img" src="" alt="" />
+</div>
+
+<script>
+  // Переключение между разделами
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('main section');
+  const themeToggle = document.getElementById('theme-toggle');
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.getAttribute('data-target');
+
+      // Удаляем активные классы
+      navLinks.forEach(l => l.classList.remove('active'));
+      sections.forEach(section => section.classList.remove('active'));
+
+      // Активируем нужный раздел и ссылку
+      document.getElementById(target).classList.add('active');
+      link.classList.add('active');
+    });
+  });
+
+  // Переключение темы (тёмная / светлая)
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if (document.body.classList.contains('dark')) {
+      themeToggle.textContent = "Светлая тема";
+      localStorage.setItem('theme', 'dark');
+    } else {
+      themeToggle.textContent = "Тёмная тема";
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+  // Проверка сохранённой темы при загрузке
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      themeToggle.textContent = "Светлая тема";
+    }
+  });
+
+  // Открытие фото в модальном окне
+  const galleryImages = document.querySelectorAll('.gallery img');
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    });
+  });
+
+  // Закрытие модального окна при клике на фон
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+    modalImg.alt = '';
+  });
+</script>
+</body>
+</html>
